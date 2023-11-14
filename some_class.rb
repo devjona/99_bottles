@@ -32,15 +32,19 @@ class BottlesSongMaker
     end
   end
 
-  def no_more_phrase_builder
-    'no more bottles of beer'
-  end
-
   def song_line_builder(quantity)
     if quantity >= 2
-      "#{bottle_phrase_builder(quantity)} on the wall. #{bottle_phrase_builder(quantity)}. Take one down, pass it around, #{bottle_phrase_builder(quantity - 1)} on the wall."
+      last_phrase = bottle_phrase_builder(quantity - 1)
     elsif quantity == 1
-      "#{bottle_phrase_builder(quantity)} on the wall. #{bottle_phrase_builder(quantity)}. Take one down, pass it around, #{no_more_phrase_builder} on the wall."
+      last_phrase = 'no more bottles of beer'
     end
+
+    placeholder_hash = {
+      first: bottle_phrase_builder(quantity),
+      second: bottle_phrase_builder(quantity),
+      last: last_phrase
+    }
+
+    "#{placeholder_hash[:first]} on the wall. #{placeholder_hash[:second]}. Take one down, pass it around, #{placeholder_hash[:last]} on the wall."
   end
 end
