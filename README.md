@@ -16,3 +16,11 @@ Output an array that has each phrase of the song
 - Number of bottles decrements
 - Final array should have 100 elements in it, with the last element having "No more bottles of beer on the wall…"
 - **Special emphasis** on using the string 'No more bottles…' instead of the integer value of beer bottle quantity.
+
+## Installation:
+
+Run `bundle` from command line to make sure that you have rspec for the tests.
+
+## Run tests:
+
+`bundle exec rspec`
